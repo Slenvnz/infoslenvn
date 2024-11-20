@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(img/download.gif);
+    background-size: cover;
+    background-position: center;
+}
+audio {
+    display: none;
+}
+.Copyrighted {
+    padding-top: 50px;
+    font-size: 15px;
+    color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+    transition: .5s;
+}
+.header:hover::after {
+    left: 100%;
+}
+.navbar a {
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+#check{
+    display: none;
+}
+.icon {
+    position: absolute;
+    font-size: 2.8rem;
+    right: 5%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+#text p {
+    padding-top: 10px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#contact {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#contact p {
+    text-align: center;
+    width: 150px;
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    color: white;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: blue;
+}
+.logo {
+    width: 50px;    
+    transition: width 1s,transform 2s;
+}
+.logo:hover{
+    width: 60px;
+    transform: rotate(360deg);
+}
+nav a{
+    font-family: 'Poppins',sans-serif;
+    font-size: 1.0rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0,3s ease;
+    border-bottom: 3px solid transparent;
+}
+nav a:hover,
+nav a:active{
+    transition: .2s ease;
+    color: #bababa;
+}
+.wrapper {
+    display: flex;
+}
+.main *, a {
+    color: white;
+}
+
+
+#info1 div,i{
+    margin: auto auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    width: 700px;
+    min-height: 40dvi;
+    margin: 100px auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.22);
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 60px;
+    backdrop-filter: blur(10px);    
+}
+#name {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Tinos", serif;
+}
+#name i {
+    font-size: 0.6em;
+    color: rgb(124, 245, 255);
+}
+#logo1 {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#logo1 img {
+    width: 5.5cm;
+    height: 5.5cm;
+    border: 3px solid white;
+    border-radius: 10%;
+}
+.box {
+    width: 120px;
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+button {
+    margin-top: 3em;
+    height: 1.5cm;
+    width: var(--btn-size);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 1em;
+    outline: none;
+    position: relative;
+    display: flex;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+button::after{
+    pointer-events: none;
+    position: absolute;
+    top: 120%;
+    height: 100%;
+    width: 100%;
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.6em) rotate(35deg) scale(1, 0.6);
+}
+:root * {
+    --btn-size: 5.5cm;
+}
+:root #BOX_FB {
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(79, 117, 255, 0.781);
+    --btn-color: rgb(100, 57, 255);
+}
+#BOX_FB button {
+    border: 0.25em solid var(--glow-color);
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0em 0em var(--glow-color);
+
+}
+/* FACKBOOK */
+#BOX_FB button::after {
+    background-color: var(--glow-spread-color);
+}
+
+#BOX_FB button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 5px var(--glow-color),
+                0 0 25px var(--glow-color),
+                0 0 50px var(--glow-color),
+                0 0 100px var(--glow-color),
+                0 0 200px var(--glow-color);
+}
+
+#BOX_FB button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/* YOUTUBE */
+:root #BOX_YT {
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(255, 0, 136, 0.781);
+    --btn-color: rgb(255, 14, 155);
+}
+#BOX_YT button {
+    border: 0.25em solid var(--glow-color);
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0em 0em var(--glow-color);
+}
+
+#BOX_YT button::after {
+
+    background-color: var(--glow-spread-color);
+
+}
+
+#BOX_YT button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 5px var(--glow-color),
+                0 0 25px var(--glow-color),
+                0 0 50px var(--glow-color),
+                0 0 100px var(--glow-color),
+                0 0 200px var(--glow-color);
+}
+
+#BOX_YT button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/*X*/
+:root #BOX_X {
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(0, 0, 0, 0.781);
+    --btn-color: rgb(0, 0, 0);
+}
+#BOX_X button {
+    border: 0.25em solid var(--glow-color);
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0em 0em var(--glow-color);
+}
+
+#BOX_X button::after {
+
+    background-color: var(--glow-spread-color);
+
+}
+
+#BOX_X button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 5px var(--glow-color),
+                0 0 25px var(--glow-color),
+                0 0 50px var(--glow-color),
+                0 0 100px var(--glow-color),
+                0 0 200px var(--glow-color);
+}
+
+#BOX_X button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/*SOUNDCOULD*/
+:root #BOX_SC {
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(255, 0, 0, 0.781);
+    --btn-color: rgb(255, 57, 57);
+}
+#BOX_SC button {
+    border: 0.25em solid var(--glow-color);
+
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0em 0em var(--glow-color);}
+
+#BOX_SC button::after {
+
+    background-color: var(--glow-spread-color);
+}
+
+#BOX_SC button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 5px var(--glow-color),
+                0 0 25px var(--glow-color),
+                0 0 50px var(--glow-color),
+                0 0 100px var(--glow-color),
+                0 0 200px var(--glow-color);
+}
+
+#BOX_SC button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/*Instagram*/
+:root #BOX_IG {
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(212, 0, 255, 0.781);
+    --btn-color: rgb(232, 57, 255);
+}
+#BOX_IG button {
+    border: 0.25em solid var(--glow-color);
+
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0em 0em var(--glow-color);}
+
+#BOX_IG button::after {
+
+    background-color: var(--glow-spread-color);
+
+}
+
+#BOX_IG button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 5px var(--glow-color),
+                0 0 25px var(--glow-color),
+                0 0 50px var(--glow-color),
+                0 0 100px var(--glow-color),
+                0 0 200px var(--glow-color);
+}
+
+#BOX_IG button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/*threat*/
+:root #BOX_TH {
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(0, 0, 0, 0.781);
+    --btn-color: rgb(0, 0, 0);
+}
+#BOX_TH button {
+    border: 0.25em solid var(--glow-color);
+ 
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0em 0em var(--glow-color);}
+
+#BOX_TH button::after {
+
+    background-color: var(--glow-spread-color);
+
+}
+
+#BOX_TH button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 5px var(--glow-color),
+                0 0 25px var(--glow-color),
+                0 0 50px var(--glow-color),
+                0 0 100px var(--glow-color),
+                0 0 200px var(--glow-color);
+}
+
+#BOX_TH button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/* TIKTOK */
+:root #BOX_TT {
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(0, 0, 0, 0.781);
+    --btn-color: rgb(0, 0, 0);
+}
+#BOX_TT button {
+    border: 0.25em solid var(--glow-color);
+ 
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0em 0em var(--glow-color);}
+
+#BOX_TT button::after {
+
+    background-color: var(--glow-spread-color);
+
+}
+
+#BOX_TT button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 5px var(--glow-color),
+                0 0 25px var(--glow-color),
+                0 0 50px var(--glow-color),
+                0 0 100px var(--glow-color),
+                0 0 200px var(--glow-color);
+}
+
+#BOX_TT button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+a {
+    text-decoration: none;
+  }
+@media screen and (max-width: 900px){
+    .info {
+        width: 330px;
+        min-height: 100dvi;
+        margin: 100px auto;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.22);
+        border-radius: 10px;
+        font-size: 30px;
+        padding: 60px;
+        backdrop-filter: blur(10px);
+    }
+    #text p {
+        padding-top: 10px;
+        color: white;
+        font-size: 11px;
+        font-family: 'Courier New', Courier, monospace;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    #name p {
+        font-size: 21px;
+    }
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+@media screen and  (max-width:768px) {
+    .icon {
+        display: inline-flex;
+    }
+    .icon #close-icon{
+        display: none;
+    }
+    #check:checked~.icon #menu-icon {
+        display: none;
+    }
+    #check:checked~.icon #close-icon {
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+    #check:checked~.navbar {
+        height: 17.7rem;
+    }
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+    #check:checked~.navbar a {
+        transform: translate(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+    .Copyrighted {
+        font-size: 12px;
+    }
+}
+@media screen and  (max-width:200px) {
+    .info {
+        width: 160px;
+        min-height: 40dvi;
+        margin: 5px auto;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.22);
+        border-radius: 10px;
+        font-size: 30px;
+        padding: 60px;
+        backdrop-filter: blur(10px);
+    }
+    #text p {
+        padding-top: 10px;
+        color: white;
+        font-size: 8px;
+        font-family: 'Courier New', Courier, monospace;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .header {
+        display: none;
+    }
+    :root * {
+        --btn-size: 2.5cm;
+    }
+    #logo1 img {
+        width: 3.5cm;
+        border: 3px solid white;
+        border-radius: 10%;
+    }
+    .Copyrighted {
+        font-size: 3px;
+    }
+    button {
+        font-size: 10px;
+    }
+}
+.snowflakes {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial;
+    text-shadow: 0 0 1px #000;
+    /* Các thuộc tính animation sẽ được thêm vào ở đây */
+  }
+  @-webkit-keyframes snowflakes-fall {
+    0% {top:-10%}
+    100% {top:100%}
+  }
+  @-webkit-keyframes snowflakes-shake {
+    0%,100% {-webkit-transform:translateX(0);transform:translateX(0)}
+    50% {-webkit-transform:translateX(80px);transform:translateX(80px)}
+  }
+  @keyframes snowflakes-fall {
+    0% {top:-10%}
+    100% {top:100%}
+  }
+  @keyframes snowflakes-shake {
+    0%,100%{ transform:translateX(0)}
+    50% {transform:translateX(80px)}
+  }
+  .snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position:fixed;
+    top:-10%;
+    z-index:9999;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:default;
+    -webkit-animation-name:snowflakes-fall,snowflakes-shake;
+    -webkit-animation-duration:10s,3s;
+    -webkit-animation-timing-function:linear,ease-in-out;
+    -webkit-animation-iteration-count:infinite,infinite;
+    -webkit-animation-play-state:running,running;
+    animation-name:snowflakes-fall,snowflakes-shake;
+    animation-duration:10s,3s;
+    animation-timing-function:linear,ease-in-out;
+    animation-iteration-count:infinite,infinite;
+    animation-play-state:running,running;
+  }
+  .snowflake:nth-of-type(0){
+    left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s
+  }
+  .snowflake:nth-of-type(1){
+    left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s
+  }
+  .snowflake:nth-of-type(2){
+    left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s
+  }
+  .snowflake:nth-of-type(3){
+    left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s
+  }
+  .snowflake:nth-of-type(4){
+    left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s
+  }
+  .snowflake:nth-of-type(5){
+    left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s
+  }
+  .snowflake:nth-of-type(6){
+    left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s
+  }
+  .snowflake:nth-of-type(7){
+    left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s
+  }
+  .snowflake:nth-of-type(8){
+    left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s
+  }
+  .snowflake:nth-of-type(9){
+    left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s
+  }
+  .snowflake:nth-of-type(10){
+    left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s
+  }
+  .snowflake:nth-of-type(11){
+    left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s
+  }
