@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gửi Telegram</title>
+  <style>
+    body {font-family: sans-serif; padding: 20px;}
+    input[type=text] {padding: 5px; width: 200px;}
+  </style>
+</head>
+<body>
+  <form id="form">
+    <label>Nhập Họ Tên:</label>
+    <input type="text" id="name" required>
+    <input type="submit" value="Gửi Telegram">
+  </form>
+
+  <script>
+    const BOT_TOKEN = "7765938740:AAFBcwCQjga7hNDN0hZMCMoO3bCS68lMeSg";
+    const CHAT_ID = "-4834358924";
+
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      if(!name) return alert("Nhập tên trước!");
+
+      const message = `📩 Có người vừa gửi form:\n👤 Họ tên: ${name}`;
+
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: "HTML"
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) alert("✅ Đã gửi đến Telegram!");
+        else alert("❌ Lỗi gửi tin!");
+      })
+      .catch(() => alert("⚠️ Không gửi được!"));
+    });
+  </script>
+</body>
+</html>
